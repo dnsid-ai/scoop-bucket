@@ -1,0 +1,71 @@
+name: Update manifest
+
+# Publishes a released version of the dnsid CLI to this bucket.
+#
+# Run it from the Actions tab: pick a version, click Run. There is no
+# credential to configure — the workflow writes only this repository, so the
+# ambient token is enough.
+#
+# This becomes unnecessary once dnsid-ai/dnsid is public: Scoop's own
+# checkver/autoupdate can bump the manifest on a schedule with no workflow of
+# ours. See the README.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version, e.g. 2026.08.25-22f2882"
+        required: true
+        type: string
+      dry_run:
+        description: "Render and show the manifest without committing"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-manifest
+  cancel-in-progress: false
+
+jobs:
+  update-manifest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # The one place the download host is stated. When dnsid moves to
+      # dnsid-ai and its release assets become public, set ARTIFACT_BASE to
+      # https://github.com/dnsid-ai/dnsid/releases/download and re-run. The
+      # path shape (<base>/<version>/<file>) is identical.
+      - name: Render manifest
+        env:
+          VERSION: ${{ inputs.version }}
+        run: ./scripts/render-manifest.sh "$VERSION"
+
+      - name: Show the manifest
+        run: |
+          echo "::group::bucket/dnsid.json"
+          cat bucket/dnsid.json
+          echo "::endgroup::"
+          git --no-pager diff -- bucket/dnsid.json
+
+      - name: Commit
+        if: ${{ !inputs.dry_run }}
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- bucket/dnsid.json; then
+            echo "Manifest is already at $VERSION — nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bucket/dnsid.json
+          git commit -m "dnsid $VERSION"
+          git push
+          echo "Published dnsid $VERSION."
