@@ -72,7 +72,7 @@ The download host is stated in exactly one place, `ARTIFACT_BASE` in
 edit here and a re-run — the CLI's own repository holds no Scoop configuration
 and needs no credential for this bucket.
 
-`license` is `Unknown` because the CLI repository does not yet carry a LICENSE
-file. Set it to the SPDX identifier once that is resolved.
+`license` is `Proprietary` with a `url` pointing at [LICENSE](LICENSE), the
+terms the dnsid binary is distributed under. `scoop info dnsid` shows both.
 
 Issues with the CLI itself belong on the upstream tracker, not here.

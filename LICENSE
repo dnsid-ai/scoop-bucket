@@ -1,0 +1,62 @@
+Copyright (c) 2026 Known Systems AI, Inc. All rights reserved.
+
+This license governs use of the compiled "dnsid" command-line binary
+("Software") made available by Known Systems AI, Inc. ("Company").
+Source code for the Software is not currently published; this license
+does not grant any rights under copyright to source code not provided
+to you.
+
+1. Grant of Use. Subject to your compliance with this license, Company
+   grants you a personal, non-exclusive, non-transferable, royalty-free
+   license to install and run the Software for any lawful purpose,
+   including commercial use.
+
+2. Restrictions. You may not: (a) redistribute, sell, sublicense, rent,
+   or lease the Software, whether modified or unmodified, except by
+   directing others to Company's official distribution channels
+   (Homebrew tap, Scoop bucket, or install script referenced in
+   Company's documentation); (b) reverse engineer, decompile, or
+   disassemble the Software, except to the extent such restriction is
+   prohibited by applicable law; (c) remove or alter any proprietary
+   notices on the Software; or (d) use the Software to build a
+   competing product or service.
+
+3. Patent License (Limited to Use). Subject to your compliance with
+   this license, Company grants you a personal, non-exclusive,
+   non-transferable, non-sublicensable, royalty-free license under any
+   patent claims Company owns or controls that would otherwise be
+   necessarily infringed by your installing and running the Software
+   as distributed, solely to the extent needed to install and run the
+   Software for its intended purpose under Section 1. This patent
+   license does not extend to: (a) any modified or combined version of
+   the Software; (b) any independent implementation of the underlying
+   protocol, techniques, or mechanisms the Software embodies (including
+   the log-binding mechanism), whether or not it uses any part of the
+   Software; or (c) any use following termination under Section 7.
+
+4. Third-Party Components. The Software includes open-source
+   components licensed to Company by their respective copyright
+   holders. Those components remain governed by their own license
+   terms, reproduced in the accompanying NOTICE file. Nothing in this
+   license limits rights granted to you under those third-party
+   licenses.
+
+5. No Warranty. THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF
+   ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+   WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
+   NONINFRINGEMENT.
+
+6. Limitation of Liability. IN NO EVENT SHALL COMPANY BE LIABLE FOR ANY
+   CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN
+   CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   SOFTWARE.
+
+7. Termination. This license, including the patent license in Section
+   3, terminates automatically if you breach Section 2. Upon
+   termination, you must stop using and delete all copies of the
+   Software.
+
+8. Future Source Release. Company may release source code for the
+   Software under a separate open-source license at a future date.
+   That release does not retroactively change the terms governing
+   binaries obtained under this license.
