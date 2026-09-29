@@ -25,7 +25,7 @@ fi
 # its release assets become public, point this at
 # https://github.com/dnsid-ai/dnsid/releases/download — the path shape
 # (<base>/<version>/<file>) is the same, so nothing else changes.
-ARTIFACT_BASE="${ARTIFACT_BASE:-https://dnsid-prod-cli-binaries.s3.us-east-1.amazonaws.com/cli}"
+ARTIFACT_BASE="${ARTIFACT_BASE:-https://downloads.dnsid.ai/cli}"
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TEMPLATE="$REPO_ROOT/templates/dnsid.json.tmpl"
